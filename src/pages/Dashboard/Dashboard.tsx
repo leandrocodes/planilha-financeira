@@ -24,12 +24,12 @@ export const Dashboard = () => {
 		}).format(val);
 
 	return (
-		<div className="p-8 md:p-12 h-full overflow-y-auto w-full relative z-10">
-			<header className="mb-12">
+		<div className="p-4 md:p-12 pb-24 md:pb-12 h-full overflow-y-auto w-full relative z-10">
+			<header className="mb-8 md:mb-12">
 				<motion.h1
 					initial={{ opacity: 0, y: -10 }}
 					animate={{ opacity: 1, y: 0 }}
-					className="text-4xl md:text-5xl font-extrabold text-accent mb-3 tracking-tight"
+					className="text-4xl md:text-5xl font-display font-bold text-accent mb-3 tracking-tight"
 				>
 					Visão Geral
 				</motion.h1>

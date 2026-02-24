@@ -17,12 +17,69 @@ export const Sidebar = () => {
 			transition={{ duration: 0.5, ease: "easeOut" }}
 			className="w-20 md:w-64 h-full glass flex flex-col items-center py-8 border-r border-primary/20 bg-background/80 relative z-20"
 		>
-			<div className="mb-12 text-center w-full px-4">
-				<h1 className="text-xl md:text-2xl font-bold bg-gradient-to-br from-accent to-primary bg-clip-text text-transparent hidden md:block tracking-wide">
+			<div className="mb-10 text-center w-full px-4 mt-2">
+				{/* Brutalist Logo */}
+				<svg
+					width="48"
+					height="48"
+					viewBox="0 0 100 100"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					className="mx-auto mb-6 text-text-main drop-shadow-[4px_4px_0_theme(colors.primary)] hidden md:block"
+					role="img"
+					aria-label="FinSpace Logo"
+				>
+					<title>FinSpace Logo</title>
+					<rect
+						x="10"
+						y="10"
+						width="80"
+						height="80"
+						stroke="currentColor"
+						strokeWidth="12"
+						fill="transparent"
+					/>
+					<path
+						d="M 50 10 L 50 90 M 10 50 L 90 50 M 15 15 L 85 85"
+						stroke="currentColor"
+						strokeWidth="12"
+					/>
+					<circle cx="50" cy="50" r="16" fill="theme(colors.danger)" />
+				</svg>
+
+				<h1 className="text-xl md:text-2xl font-display font-black tracking-tight text-text-main hidden md:block uppercase">
 					FinSpace
 				</h1>
-				<div className="md:hidden w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mx-auto border border-primary/30">
-					<span className="font-bold text-accent">FS</span>
+
+				{/* Mobile Logo */}
+				<div className="md:hidden w-12 h-12 flex items-center justify-center mx-auto relative group">
+					<svg
+						width="100%"
+						height="100%"
+						viewBox="0 0 100 100"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						className="text-text-main drop-shadow-[3px_3px_0_theme(colors.primary)]"
+						role="img"
+						aria-label="FinSpace Mobile Logo"
+					>
+						<title>FinSpace Logo</title>
+						<rect
+							x="10"
+							y="10"
+							width="80"
+							height="80"
+							stroke="currentColor"
+							strokeWidth="12"
+							fill="transparent"
+						/>
+						<path
+							d="M 50 10 L 50 90 M 10 50 L 90 50 M 15 15 L 85 85"
+							stroke="currentColor"
+							strokeWidth="12"
+						/>
+						<circle cx="50" cy="50" r="16" fill="theme(colors.danger)" />
+					</svg>
 				</div>
 			</div>
 
@@ -74,15 +131,6 @@ export const Sidebar = () => {
 					</NavLink>
 				))}
 			</nav>
-
-			<div className="mt-auto px-4 w-full text-center hidden md:block">
-				<div className="p-4 rounded-2xl bg-danger-dark/20 border border-danger/20">
-					<p className="text-xs text-danger uppercase tracking-widest font-bold mb-1">
-						Status
-					</p>
-					<p className="text-sm text-text-muted">Sync Ativo</p>
-				</div>
-			</div>
 		</motion.aside>
 	);
 };

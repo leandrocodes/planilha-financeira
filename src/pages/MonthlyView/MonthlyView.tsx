@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { Plus } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useTransactions } from "../../entities/Transaction/model/useTransactions";
 import {
@@ -164,13 +165,13 @@ export const MonthlyView = () => {
 	};
 
 	return (
-		<div className="p-8 md:p-12 h-full flex flex-col w-full overflow-hidden relative z-10">
-			<header className="mb-8 flex justify-between items-center flex-wrap gap-6 shrink-0">
+		<div className="p-4 md:p-12 pb-24 md:pb-12 h-full flex flex-col w-full overflow-hidden relative z-10">
+			<header className="mb-4 md:mb-8 flex justify-between items-center flex-wrap gap-6 shrink-0">
 				<div>
 					<motion.h1
 						initial={{ opacity: 0, y: -10 }}
 						animate={{ opacity: 1, y: 0 }}
-						className="text-4xl md:text-5xl font-extrabold text-accent mb-3 tracking-tight"
+						className="text-4xl md:text-5xl font-display font-bold text-accent mb-3 tracking-tight"
 					>
 						Consolidação
 					</motion.h1>
@@ -194,7 +195,7 @@ export const MonthlyView = () => {
 					whileTap={{ scale: 0.95 }}
 					type="button"
 					onClick={openNewModal}
-					className="px-8 py-3 bg-primary text-background rounded-full shadow-[0_0_15px_rgba(102,155,188,0.3)] transition-colors font-bold tracking-widest uppercase text-sm border border-primary/50"
+					className="hidden md:block px-8 py-3 bg-primary text-background rounded-full shadow-[0_0_15px_rgba(102,155,188,0.3)] transition-colors font-bold tracking-widest uppercase text-sm border border-primary/50"
 				>
 					Novo Registro
 				</motion.button>
@@ -214,7 +215,7 @@ export const MonthlyView = () => {
 							key={month}
 							type="button"
 							onClick={() => setSelectedMonth(monthNum)}
-							className={`relative px-8 py-3 rounded-full whitespace-nowrap transition-all font-mono uppercase text-sm tracking-widest overflow-hidden group ${
+							className={`relative px-8 py-3 rounded-full whitespace-nowrap transition-all font-mono uppercase text-sm tracking-widest overflow-hidden group flex items-center justify-center ${
 								isActive
 									? "text-background shadow-[0_0_15px_rgba(253,240,213,0.3)] cursor-default"
 									: "bg-surface text-text-muted border border-primary/20 hover:text-accent"
@@ -227,7 +228,9 @@ export const MonthlyView = () => {
 									transition={{ type: "spring", stiffness: 300, damping: 30 }}
 								/>
 							)}
-							<span className="relative z-10">{month}</span>
+							<span className="relative z-10 text-center pl-[0.1em]">
+								{month}
+							</span>
 						</button>
 					);
 				})}
@@ -455,6 +458,16 @@ export const MonthlyView = () => {
 				onDelete={handleDelete}
 				initialData={modalData}
 			/>
+
+			<motion.button
+				initial={{ opacity: 0, scale: 0 }}
+				animate={{ opacity: 1, scale: 1 }}
+				whileTap={{ scale: 0.95 }}
+				onClick={openNewModal}
+				className="md:hidden fixed bottom-24 right-4 w-14 h-14 bg-primary text-background rounded-full shadow-[0_0_15px_rgba(102,155,188,0.5)] flex items-center justify-center z-40 border border-primary/50"
+			>
+				<Plus className="w-6 h-6 stroke-2" />
+			</motion.button>
 		</div>
 	);
 };

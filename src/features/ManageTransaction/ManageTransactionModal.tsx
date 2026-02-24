@@ -82,12 +82,12 @@ export const ManageTransactionModal = ({
 						<button
 							type="button"
 							onClick={onClose}
-							className="absolute top-6 right-6 text-text-muted hover:text-accent transition-colors p-2 rounded-full hover:bg-surface"
+							className="absolute top-4 right-4 md:top-6 md:right-6 text-text-muted hover:text-accent transition-colors p-3 rounded-full hover:bg-surface"
 						>
 							<X className="w-6 h-6" />
 						</button>
 
-						<h2 className="text-3xl font-extrabold mb-8 text-accent tracking-tight">
+						<h2 className="text-3xl font-display font-bold mb-8 text-accent tracking-tight">
 							{initialData ? "Editar Reg" : "Novo Reg"}
 						</h2>
 
@@ -160,6 +160,7 @@ export const ManageTransactionModal = ({
 											required
 											type="number"
 											step="0.01"
+											inputMode="decimal"
 											value={formData.amount}
 											onChange={(e) =>
 												setFormData({ ...formData, amount: e.target.value })
@@ -192,7 +193,10 @@ export const ManageTransactionModal = ({
 										onChange={(e) =>
 											setFormData({
 												...formData,
-												status: e.target.value as 'paga' | 'pendente' | 'atrasada',
+												status: e.target.value as
+													| "paga"
+													| "pendente"
+													| "atrasada",
 											})
 										}
 										className="bg-background/50 border border-primary/20 rounded-xl px-5 py-4 text-accent text-sm outline-none focus:border-primary focus:bg-primary/5 transition-all shadow-inner"
