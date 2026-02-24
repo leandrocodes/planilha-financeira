@@ -383,15 +383,15 @@ export const MonthlyView = () => {
 									Saldo Consolidado (Pago)
 								</h2>
 
-								<div className="flex justify-between items-center mb-3 text-sm font-mono text-text-muted">
+								<div className="flex flex-wrap items-baseline justify-between gap-2 mb-3 text-sm font-mono text-text-muted">
 									<span>Receitas</span>
-									<span className="text-primary">
+									<span className="text-primary break-all">
 										{formatCurrency(totals.paidIncome)}
 									</span>
 								</div>
-								<div className="flex justify-between items-center mb-6 text-sm font-mono text-text-muted">
+								<div className="flex flex-wrap items-baseline justify-between gap-2 mb-6 text-sm font-mono text-text-muted">
 									<span>Despesas</span>
-									<span className="text-danger">
+									<span className="text-danger break-all">
 										-{formatCurrency(totals.paidExpense)}
 									</span>
 								</div>
@@ -401,34 +401,37 @@ export const MonthlyView = () => {
 										Balanço Atual
 									</span>
 									<span
-										className={`text-4xl font-mono font-bold drop-shadow-[0_0_15px_currentColor] ${totals.paidBalance >= 0 ? "text-accent" : "text-danger"}`}
+										className={`text-3xl md:text-4xl font-mono font-bold drop-shadow-[0_0_15px_currentColor] break-all ${totals.paidBalance >= 0 ? "text-accent" : "text-danger"}`}
 									>
 										{formatCurrency(totals.paidBalance)}
 									</span>
 								</div>
 							</div>
 
-							<div className="glass rounded-3xl border border-primary/10 p-6 md:p-8 flex flex-col relative overflow-hidden">
-								<div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
-								<h2 className="text-xs font-bold uppercase tracking-widest text-text-muted/60 mb-6 font-mono">
+							<div className="glass rounded-3xl border border-primary/20 p-6 md:p-8 flex flex-col">
+								<h2 className="text-xs font-bold uppercase tracking-widest text-primary mb-6 opacity-80">
 									Projeção Mensal
 								</h2>
 
-								<div className="flex justify-between items-center mb-3 text-sm font-mono text-text-muted/70">
+								<div className="flex flex-wrap items-baseline justify-between gap-2 mb-3 text-sm font-mono text-text-muted">
 									<span>Previsto Receitas</span>
-									<span>{formatCurrency(totals.projectedIncome)}</span>
+									<span className="text-primary break-all">
+										{formatCurrency(totals.projectedIncome)}
+									</span>
 								</div>
-								<div className="flex justify-between items-center mb-6 text-sm font-mono text-text-muted/70">
+								<div className="flex flex-wrap items-baseline justify-between gap-2 mb-6 text-sm font-mono text-text-muted">
 									<span>Previsto Despesas</span>
-									<span>-{formatCurrency(totals.projectedExpense)}</span>
+									<span className="text-danger break-all">
+										-{formatCurrency(totals.projectedExpense)}
+									</span>
 								</div>
 
-								<div className="pt-4 border-t border-primary/10">
-									<span className="block text-[10px] uppercase tracking-widest text-text-muted/50 mb-1">
+								<div className="pt-4 border-t border-primary/20">
+									<span className="block text-xs uppercase tracking-widest text-text-muted mb-2">
 										Balanço Projetado
 									</span>
 									<span
-										className={`text-xl font-mono ${totals.projectedBalance >= 0 ? "text-primary/80" : "text-danger/80"}`}
+										className={`text-3xl md:text-4xl font-mono font-bold drop-shadow-[0_0_15px_currentColor] break-all ${totals.projectedBalance >= 0 ? "text-primary/80" : "text-danger"}`}
 									>
 										{formatCurrency(totals.projectedBalance)}
 									</span>

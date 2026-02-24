@@ -2,6 +2,17 @@
 
 **FinSpace** is a modern, responsive personal finance dashboard built with React and Firebase. It features a striking **Neo-Brutalist aesthetic**, leveraging large geometric typography, vibrant stark colors, and high-contrast drop shadows. It is designed specifically to make financial consolidation powerful, secure, and visually unmistakable.
 
+## 📸 Screenshots
+
+<div align="center">
+  <img src="docs/assets/dashboard.png" alt="Dashboard" width="48%" />
+  <img src="docs/assets/monthly.png" alt="Monthly View" width="48%" />
+  <br>
+  <img src="docs/assets/mobile.png" alt="Mobile View" width="30%" />
+</div>
+
+---
+
 ## 🌟 Features
 - **Cross-Platform Responsive:** Desktop-class data-dense layout combined with a fluid, finger-friendly mobile experience including Bottom Navigation and Floating Action Buttons (FABs).
 - **Brutalist UI:** A brave departure from "clean SaaS" looks — FinSpace uses the **Unbounded** geometric display font, heavy borders, deep structural shadows, and unapologetic UI geometry.
