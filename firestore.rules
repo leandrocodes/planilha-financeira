@@ -1,0 +1,12 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // For MVP phase, allowing read/write to anyone. 
+    // Force update 2
+    // TODO: Update to require authentication for production.
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
